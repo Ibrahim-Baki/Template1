@@ -1,0 +1,15 @@
+{
+  "name": "template1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "sass": "node-sass -w css/ -o css/ --expanded"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^6.0.1",
+    "sass": "^1.43.4"
+  },
+  "description": ""
+}

@@ -1,0 +1,263 @@
+// Landing
+.landing {
+    background-image: url("../../../img/bg1.jpg");
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+
+    .intro-text{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        width: 320px;
+        max-width: 100%;
+        transform: translate(-50% , -50%) ;
+        h1{
+            margin: 0;
+            color: $mainColor;
+            font-size: 45px;
+        }
+        p{
+            font-size: 19px;
+            line-height: 1.8;
+        }
+    }
+}
+
+// Features
+.features {
+    @include sectionsPadding;
+    background-color: $sectionBackground;
+
+    .container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        grid-gap: 20px;
+
+        .feat{
+            text-align: center;
+            padding: 20px;
+            i{
+                color: $mainColor;
+            }
+            h3{
+                font-weight: 800;
+                margin: 30px 0;
+            }
+            p{
+                line-height: 1.8;
+                color: $pColor;
+                font-size: 17px;
+            }
+        }
+    }
+}
+
+//services
+.services {
+    @include sectionsPadding;
+    .services-content{
+        display: grid;
+        grid-template-columns: repeat(auto-fill ,minmax(300px,1fr));
+        grid-gap: 30px;
+        margin-top: 100px;
+
+        .col{
+            .single-service{
+                margin-bottom: 40px;
+                display: flex;
+                @media #{$maxMobile}{
+                    flex-direction: column;
+                    text-align: center;
+                }
+                i{
+                    color: $mainColor;
+                    flex-basis: 60px;
+                }
+                .text{
+                    flex: 1;
+                    h3{
+                        margin: 0 0 30px 0;
+                    }
+                    p{
+                        color: $pColor;
+                        font-weight: 300;
+                        line-height: 1.6;
+                    }
+                }
+            }
+            .image{
+                @media (max-width: 1199px){
+                    display: none;
+                }
+                text-align: center;
+                position: relative;
+                img{
+                    width: 260px;
+                    // height: 400px; 
+                }
+                &::before{
+                    content: "";
+                    background-color: $secondaryColor;
+                    right: 0;
+                    top: -50px;
+                    position: absolute;
+                    width: 100px;
+                    height: calc(100% + 100px);
+                    z-index: -1;
+                }
+                
+            }
+            
+        }
+    }
+}
+
+//portfolio
+.portfolio{
+    @include sectionsPadding;
+    background-color: $sectionBackground;
+    .content{
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+        justify-content: space-between;
+        grid-gap:30px
+    }
+    .single-section{
+        background-color: white;
+        img{
+            width: 100%;
+            height: 240px;
+            @media #{$maxMobile}{
+                    width: 85%; 
+            }
+        }
+        .text{
+            padding-left: 20px;
+            h4{
+                margin-bottom: 0px;
+            }
+            p{
+                color: $pColor;
+                font-weight: 300;
+                line-height: 1.6;
+            }
+        }
+        @media #{$maxMobile}{
+            text-align: center;
+            img{
+                width: 85%;
+            }
+        }
+
+    }
+}
+// About
+.about{
+    @include sectionsPadding;
+    .content{
+        margin-top: 100px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 100px;
+        .image{
+            position: relative;
+            width: 250px;
+            height: 375px;
+            img{
+                width: 100%;
+            }
+            &::before{
+                content: "";
+                position: absolute;
+                width: 100px;
+                height: calc(100% + 80px);
+                background-color: #ebeced;
+                z-index: -1;
+                left: -20px;
+                top: -50px;
+                @media #{$maxMobile}{
+                    height: 300px;
+                    background-color: transparent;
+                    border-left: 80px solid #ebeced;
+                    border-bottom: 80px solid  #ebeced;
+                    left: -33px;
+                    top: 97px;
+                }
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                width: 120px;
+                height: 300px;
+                border-left: 80px solid $mainColor;
+                border-bottom: 80px solid $mainColor;
+                z-index: -1;
+                right: -158px;
+                top: -40px;
+                @media #{$maxMobile}{
+                    border-left: none;
+                    border-bottom: none;
+                    border-right: 80px solid $mainColor;
+                    border-top: 80px solid $mainColor;
+                    right: -33px;
+                    top: -97px;
+                }
+
+            }
+        }
+        .text{
+            flex-basis: calc(100% - 500px);
+            line-height: 2;
+            p:first-of-type{
+                font-weight: bold;
+                margin-bottom: 50px;
+            }
+            hr{
+                width: 50%;
+                border-color: $mainColor;
+                display: inline-block;
+            }
+            p:last-of-type{
+                color: $pColor;
+            }
+        }
+        @media #{$maxsmall}{
+            flex-direction: column;
+            text-align: center;
+            .image{
+                margin: 50px auto 0;
+            }
+        }
+    }
+}
+// contact
+.contact{
+    @include sectionsPadding;
+    background-color: $sectionBackground;
+    .content{
+        margin-top: 100px;
+        text-align: center;
+         h1{
+            text-align: center;
+            color: $secondaryColor;
+            font-weight: 800;
+            span{
+                padding-top: 20px;
+                display: block;
+                color: $mainColor;
+            }
+        }
+        p{
+            display: inline-block;
+        }
+        i{
+            color: $secondaryColor;
+            margin-left: 10px;
+        }
+    }
+   
+}

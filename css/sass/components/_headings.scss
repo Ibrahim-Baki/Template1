@@ -1,0 +1,22 @@
+.light-heading{
+    text-align: center;
+    h1{
+        color: #ebeced;
+        margin: 0;
+        font-weight: 800;
+        font-size: 100px;
+        letter-spacing: -3px;
+
+        @media #{$maxMobile}{
+            font-size: 70px;
+        }
+    }
+    p{
+        color: $pColor;
+        margin-top: -32px;
+        @media #{$maxMobile}{
+            font-size: 14px;
+            margin-top: -20px;
+        }
+    }
+}
