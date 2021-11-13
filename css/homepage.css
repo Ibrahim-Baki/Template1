@@ -127,7 +127,7 @@ body {
   display: block; }
 
 .landing {
-  background-image: url("../../../img/bg1.jpg");
+  background-image: url("../img/bg1.jpg");
   background-size: cover;
   height: calc(100vh - 64px);
   position: relative; }
